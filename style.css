@@ -1,0 +1,227 @@
+
+    @import url('https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Montserrat:ital,wght@0,400;0,800;1,900&display=swap');
+
+    :root {
+      --bg-dark: #07060f;
+      --panel-bg: rgba(21, 17, 38, 0.85);
+      --rivals-gold: #ffe600;
+      --rivals-cyan: #00f0ff;
+      --rivals-magenta: #ff0055;
+      --text-light: #ffffff;
+      --text-muted: #8d87a5;
+      --border-accent: rgba(255, 230, 0, 0.3);
+      --font-display: 'Teko', sans-serif;
+      --font-body: 'Montserrat', sans-serif;
+    }
+
+    * {box-sizing: border-box;
+      margin: 0;
+      padding: 0;}
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 50% 20%, rgba(0, 240, 255, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(255, 0, 85, 0.1) 0%, transparent 50%),
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.02) 3px, rgba(255, 255, 255, 0.02) 3px);
+      color: var(--text-light);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      overflow-x: hidden;
+    }
+
+    /* Comic Halftone Overlay Effect */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
+      background-size: 12px 12px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    /* Header Nav */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 1rem;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #fff;
+      text-shadow: -3px 3px 0px var(--rivals-magenta), 3px -3px 0px var(--rivals-cyan);
+      transform: skew(-8deg);
+    }
+
+    .logo span {
+      color: var(--rivals-gold);
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      background: var(--panel-bg);
+      border: 1px solid var(--border-accent);
+      padding: 3rem;
+      position: relative;
+      backdrop-filter: blur(10px);
+      clip-path: polygon(25px 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%, 0 25px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .hero-banner::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 120px;
+      height: 4px;
+      background: var(--rivals-gold);
+      box-shadow: 0 0 10px var(--rivals-gold);
+    }
+
+    .tagline {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--rivals-cyan);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .main-title {
+      font-family: var(--font-display);
+      font-size: 5rem;
+      line-height: 0.9;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin: 0.5rem 0 1.5rem 0;
+      transform: skew(-5deg);
+      background: linear-gradient(180deg, #ffffff 40%, var(--rivals-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.8));
+    }
+
+    .description {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+    }
+
+    /* Action Buttons */
+    .cta-group {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      position: relative;
+      background: var(--rivals-gold);
+      color: #000;
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.8rem 2.5rem;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 2px;
+      transform: skew(-10deg);
+      transition: all 0.2s ease;
+      clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+    }
+
+    .btn-primary:hover {
+      background: #ffffff;
+      box-shadow: 0 0 20px var(--rivals-gold);
+      transform: skew(-10deg) scale(1.05);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-light);
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      padding: 0.8rem 2.5rem;
+      border: 2px solid var(--rivals-cyan);
+      cursor: pointer;
+      letter-spacing: 2px;
+      transform: skew(-10deg);
+      transition: all 0.2s ease;
+      clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+    }
+
+    .btn-secondary:hover {
+      background: var(--rivals-cyan);
+      color: #000;
+      box-shadow: 0 0 20px var(--rivals-cyan);
+    }
+
+    /* Character Selection Grid Showcase */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .card {
+      background: rgba(15, 12, 28, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      position: relative;
+      transition: all 0.3s ease;
+      clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+    }
+
+    .card:hover {
+      border-color: var(--rivals-magenta);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(255, 0, 85, 0.2);
+    }
+
+    .card-role {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--rivals-gold);
+      letter-spacing: 1px;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      margin: 0.2rem 0;
+    }
+
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+ 
