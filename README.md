@@ -1,6 +1,6 @@
 # Gruppuppgift-1-
 
 Divide work:
-Header/nav - Yoonis
+Header/nav 
 main
 footer
